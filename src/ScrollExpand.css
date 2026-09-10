@@ -1,0 +1,90 @@
+.scroll-expand {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.scroll-expand--scroller {
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.scroll-expand__track {
+  position: relative;
+  width: 100%;
+}
+
+.scroll-expand__stage {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.scroll-expand__frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  will-change: clip-path;
+  pointer-events: auto;
+}
+
+.scroll-expand__media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+}
+
+.scroll-expand__scrim {
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity;
+}
+
+.scroll-expand__title {
+  position: absolute;
+  z-index: 2;
+  font-size: var(--se-title-size, 3rem);
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  pointer-events: none;
+  will-change: transform, opacity;
+  padding: 0 1rem;
+}
+
+.scroll-expand__hint {
+  position: absolute;
+  bottom: 2rem;
+  z-index: 2;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.scroll-expand__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  opacity: 0;
+  will-change: transform, opacity;
+}
