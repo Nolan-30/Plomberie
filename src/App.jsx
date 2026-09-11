@@ -12,6 +12,9 @@ import {
   Quote,
   Mail,
 } from "lucide-react";
+
+// Composant
+import GradientWaves from "./GradientWaves";
 import ScrollExpand from "./ScrollExpand";
 import AnimatedContent from "./AnimatedContent";
 
@@ -92,7 +95,7 @@ function Navbar() {
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 shadow-[0_4px_12px_rgba(37,99,235,0.25)]">
             <Droplet className="h-5 w-5 text-white" strokeWidth={2.5} />
           </span>
-          <span className="font-['Manrope',sans-serif] text-lg font-bold tracking-tight text-slate-900">
+          <span className="font-['Manrope',sans-serif] text-lg font-bold tracking-tight text-white-900">
             MBS Plomberie
           </span>
         </a>
@@ -138,45 +141,27 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative flex items-center overflow-hidden bg-slate-50/50 pb-16 pt-32 sm:pb-24 sm:pt-40"
+      className="relative flex items-center overflow-hidden bg-[#0a1128] pb-16 pt-32 sm:pb-24 sm:pt-40"
     >
-      <div className="pointer-events-none absolute -top-40 left-1/4 h-[30rem] w-[30rem] rounded-full bg-blue-200/40 blur-3xl opacity-70" />
-      <div className="pointer-events-none absolute -bottom-32 right-0 h-[26rem] w-[26rem] rounded-full bg-sky-200/50 blur-3xl opacity-60" />
+      {/* Background Gradient Waves */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <GradientWaves
+          horizonColor="#0051ff"
+          waveColor="#2563eb"
+          waveSpeed={1}
+        />
+      </div>
 
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, #0284c7 1px, transparent 1px), linear-gradient(to bottom, #0284c7 1px, transparent 1px)",
-          backgroundSize: "56px 56px",
-        }}
-      />
-
-      <div className="relative mx-auto max-w-5xl px-6 text-center">
-        <a
-          href="#reviews"
-          className="inline-flex animate-[fadeInUp_0.7s_ease-out_forwards] items-center gap-2 rounded-full border border-blue-100 bg-blue-50/80 px-4 py-2 text-sm text-blue-950 backdrop-blur-md opacity-0 shadow-sm transition-transform hover:scale-105"
-          style={{ animationDelay: "0ms" }}
-        >
-          <span className="flex items-center gap-0.5 text-amber-500">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} className="h-3.5 w-3.5 fill-amber-400" />
-            ))}
-          </span>
-          <span className="font-medium">
-            Note 5/5 sur Google Maps · Mantes-la-Jolie
-          </span>
-        </a>
-
+      <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
         <h1
-          className="mt-7 animate-[fadeInUp_0.7s_ease-out_forwards] font-['Manrope',sans-serif] text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-900 opacity-0 sm:text-5xl lg:text-6xl"
+          className="mt-7 animate-[fadeInUp_0.7s_ease-out_forwards] font-['Manrope',sans-serif] text-4xl font-extrabold leading-[1.1] tracking-tight text-white opacity-0 sm:text-5xl lg:text-6xl"
           style={{ animationDelay: "120ms" }}
         >
           Votre plombier-chauffagiste de confiance à Mantes-la-Jolie
         </h1>
 
         <p
-          className="mx-auto mt-6 max-w-2xl animate-[fadeInUp_0.7s_ease-out_forwards] text-lg leading-relaxed text-slate-600 opacity-0"
+          className="mx-auto mt-6 max-w-2xl animate-[fadeInUp_0.7s_ease-out_forwards] text-lg leading-relaxed text-slate-300 opacity-0"
           style={{ animationDelay: "240ms" }}
         >
           Intervention rapide 24h/24 et 7j/7 pour vos dépannages, recherches de
@@ -190,27 +175,27 @@ function Hero() {
         >
           <a
             href={PHONE_TEL}
-            className="flex w-full items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-7 py-4 text-base font-semibold text-slate-800 shadow-sm transition-all duration-300 ease-out hover:border-blue-300 hover:bg-slate-50 sm:w-auto"
+            className="group flex w-full items-center justify-center gap-2 rounded-full border border-blue-500/30 bg-blue-600 px-7 py-4 text-base font-semibold text-white shadow-lg transition-all duration-300 ease-out hover:bg-blue-500 sm:w-auto"
           >
             Demander un devis gratuit
-            <ChevronRight className="h-4 w-4 text-slate-400" />
+            <ChevronRight className="h-4 w-4 text-blue-200 group-hover:text-white transition-colors" />
           </a>
         </div>
 
         <div
-          className="mt-12 flex animate-[fadeInUp_0.7s_ease-out_forwards] flex-wrap items-center justify-center gap-x-8 gap-y-3 border-t border-slate-200/80 pt-8 text-sm font-medium text-slate-600 opacity-0"
+          className="mt-12 flex animate-[fadeInUp_0.7s_ease-out_forwards] flex-wrap items-center justify-center gap-x-8 gap-y-3 border-t border-white-800 pt-8 text-sm font-medium text-slate-300 opacity-0"
           style={{ animationDelay: "480ms" }}
         >
           <span className="flex items-center gap-2">
-            <ShieldCheck className="h-4 w-4 text-blue-600" />
+            <ShieldCheck className="h-4 w-4 text-blue-400" />
             Garantie décennale
           </span>
           <span className="flex items-center gap-2">
-            <Clock className="h-4 w-4 text-blue-600" />
+            <Clock className="h-4 w-4 text-blue-400" />
             Dispo 24/7
           </span>
           <span className="flex items-center gap-2">
-            <MapPin className="h-4 w-4 text-blue-600" />6 Sq. Chantecoq, 78200
+            <MapPin className="h-4 w-4 text-blue-400" />6 Sq. Chantecoq, 78200
             Mantes-la-Jolie
           </span>
         </div>
@@ -227,7 +212,7 @@ function ReviewsSection() {
   return (
     <section id="reviews" className="bg-white py-20 border-t border-slate-100">
       <div className="mx-auto max-w-7xl px-6">
-        {/* Titre animé */}
+        {/* Titre de la section */}
         <AnimatedContent distance={40} direction="vertical" duration={0.6}>
           <div className="text-center max-w-2xl mx-auto mb-14">
             <div className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3.5 py-1.5 text-xs font-semibold text-blue-700 mb-4">
@@ -244,40 +229,34 @@ function ReviewsSection() {
           </div>
         </AnimatedContent>
 
-        {/* Grille d'avis animée avec effet en cascade (delay) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {REVIEWS.map((rev, index) => (
-            <AnimatedContent
+        {/* Grille forcée en 3 colonnes côte à côte */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {REVIEWS.map((rev) => (
+            <div
               key={rev.id}
-              distance={50}
-              direction="vertical"
-              delay={index * 0.12}
-              duration={0.7}
-              className="h-full"
+              className="flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-slate-50/50 p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-blue-200 hover:-translate-y-1"
             >
-              <div className="flex flex-col justify-between h-full rounded-2xl border border-slate-200/80 bg-slate-50/50 p-6 transition-all duration-300 hover:shadow-lg hover:border-blue-200 hover:-translate-y-1">
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-1 text-amber-400">
-                      {Array.from({ length: rev.rating }).map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-amber-400" />
-                      ))}
-                    </div>
-                    <Quote className="h-6 w-6 text-blue-200" />
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-1 text-amber-400">
+                    {Array.from({ length: rev.rating }).map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-amber-400" />
+                    ))}
                   </div>
-                  <p className="text-sm leading-relaxed text-slate-700 italic">
-                    "{rev.comment}"
-                  </p>
+                  <Quote className="h-6 w-6 text-blue-200" />
                 </div>
-
-                <div className="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between">
-                  <span className="font-semibold text-sm text-slate-900">
-                    {rev.name}
-                  </span>
-                  <span className="text-xs text-slate-400">{rev.date}</span>
-                </div>
+                <p className="text-sm leading-relaxed text-slate-700 italic">
+                  "{rev.comment}"
+                </p>
               </div>
-            </AnimatedContent>
+
+              <div className="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                <span className="font-semibold text-sm text-slate-900">
+                  {rev.name}
+                </span>
+                <span className="text-xs text-slate-400">{rev.date}</span>
+              </div>
+            </div>
           ))}
         </div>
       </div>
@@ -291,58 +270,51 @@ function ReviewsSection() {
 
 function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+    <footer className="w-full bg-[#0b1329] text-slate-300 pt-16 pb-12">
+      <div className="mx-auto max-w-7xl px-8">
+        <div className="grid grid-cols-4 gap-8 pb-16">
+          {/* Logo & Description */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600">
+            <div className="flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600">
                 <Droplet className="h-5 w-5 text-white" strokeWidth={2.5} />
               </span>
-              <span className="font-['Manrope',sans-serif] text-lg font-bold tracking-tight text-white">
+              <span className="font-['Manrope',sans-serif] text-xl font-bold tracking-tight text-white">
                 MBS Plomberie
               </span>
             </div>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <p className="text-xs leading-relaxed text-slate-400">
               Votre artisan plombier-chauffagiste de confiance à
               Mantes-la-Jolie. Intervention rapide, travail soigné et tarifs
               transparents.
             </p>
           </div>
 
+          {/* Services & Navigation */}
           <div>
-            <h3 className="text-white font-semibold mb-4 text-sm font-['Manrope',sans-serif]">
+            <h3 className="mb-4 font-['Manrope',sans-serif] text-base font-semibold text-white">
               Services & Navigation
             </h3>
-            <ul className="space-y-2.5 text-sm text-slate-400">
+            <ul className="space-y-3 text-xs text-slate-400">
               <li>
-                <a
-                  href="#top"
-                  className="hover:text-blue-400 transition-colors"
-                >
+                <a href="#top" className="transition-colors hover:text-white">
                   Accueil
                 </a>
               </li>
               <li>
-                <a
-                  href="#top"
-                  className="hover:text-blue-400 transition-colors"
-                >
+                <a href="#top" className="transition-colors hover:text-white">
                   Dépannage d'urgence
                 </a>
               </li>
               <li>
-                <a
-                  href="#top"
-                  className="hover:text-blue-400 transition-colors"
-                >
+                <a href="#top" className="transition-colors hover:text-white">
                   Rénovation de salle de bain
                 </a>
               </li>
               <li>
                 <a
                   href="#reviews"
-                  className="hover:text-blue-400 transition-colors"
+                  className="transition-colors hover:text-white"
                 >
                   Avis clients
                 </a>
@@ -350,20 +322,21 @@ function Footer() {
             </ul>
           </div>
 
+          {/* Contact */}
           <div>
-            <h3 className="text-white font-semibold mb-4 text-sm font-['Manrope',sans-serif]">
+            <h3 className="mb-4 font-['Manrope',sans-serif] text-base font-semibold text-white">
               Contact
             </h3>
-            <ul className="space-y-3 text-sm text-slate-400">
+            <ul className="space-y-4 text-xs text-slate-400">
               <li className="flex items-start gap-3">
-                <MapPin className="h-4 w-4 text-blue-500 mt-0.5 shrink-0" />
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-blue-500" />
                 <span>6 Sq. Chantecoq, 78200 Mantes-la-Jolie</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="h-4 w-4 text-blue-500 shrink-0" />
+                <Phone className="h-4 w-4 shrink-0 text-blue-500" />
                 <a
                   href={PHONE_TEL}
-                  className="hover:text-white transition-colors"
+                  className="transition-colors hover:text-white"
                 >
                   {PHONE_DISPLAY}
                 </a>
@@ -371,30 +344,21 @@ function Footer() {
             </ul>
           </div>
 
+          {/* Disponibilité */}
           <div>
-            <h3 className="text-white font-semibold mb-4 text-sm font-['Manrope',sans-serif]">
+            <h3 className="mb-4 font-['Manrope',sans-serif] text-base font-semibold text-white">
               Disponibilité
             </h3>
-            <div className="space-y-2 text-sm text-slate-400">
-              <div className="flex items-center gap-2 text-emerald-400 font-medium">
-                <Clock className="h-4 w-4" />
-                <span>Urgence : 24h/24 et 7j/7</span>
-              </div>
+            <div className="flex items-center gap-2.5 text-xs font-medium text-emerald-400">
+              <Clock className="h-4 w-4 shrink-0" />
+              <span>Urgence : 24h/24 et 7j/7</span>
             </div>
           </div>
         </div>
 
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>
-            © {new Date().getFullYear()} MBS Plomberie. Tous droits réservés.
-          </p>
-          <div className="flex gap-6">
-            <a href="#top" className="hover:text-slate-400 transition-colors">
-              Mentions légales
-            </a>
-            <a href="#top" className="hover:text-slate-400 transition-colors">
-              Politique de confidentialité
-            </a>
+        <div className="border-t border-slate-800/80 pt-8">
+          <div className="flex items-center justify-center gap-4 text-xs text-slate-500">
+            <p>© MBS Plomberie. Tous droits réservés.</p>
           </div>
         </div>
       </div>
