@@ -28,42 +28,44 @@ const PHONE_TEL = "tel:0620351826";
 const REVIEWS = [
   {
     id: 1,
-    name: "Thomas L.",
-    date: "Il y a 2 semaines",
+    name: "Yassine B.",
     comment:
-      "Intervention ultra rapide pour une fuite d'eau importante un dimanche soir. Travail propre, soigné et tarif très raisonnable. Je recommande les yeux fermés !",
+      "Très professionnel et ponctuel. Explications claires avant les travaux et tarifs très raisonnables. Je recommande MBS Plomberie a 100%.",
     rating: 5,
   },
   {
     id: 2,
-    name: "Sarah M.",
-    date: "Il y a 1 mois",
+    name: "Julliot P.",
     comment:
-      "Rénovation complète de notre salle de bain. Le résultat est magnifique ! L'équipe est très professionnelle, ponctuelle et de bon conseil.",
+      "Excellent travail de MBS Plomberie. Ponctuel, explications claires avant intervention et tarifs très abordables.",
     rating: 5,
   },
   {
     id: 3,
-    name: "Marc D.",
-    date: "Il y a 1 mois",
+    name: "Milah D.",
     comment:
-      "Changement de chauffe-eau effectué dans la journée. Artisan réactif, transparent sur ses prix et très sympathique. Merci encore !",
+      "Plombier extrêmement professionnel et sérieux. Il a refait toute notre salle de bain et retiré des WC avec un délai rapide et des prix très corrects.",
     rating: 5,
   },
   {
     id: 4,
-    name: "Camille B.",
-    date: "Il y a 2 mois",
+    name: "Yasmina O.",
     comment:
-      "Débouchement de canalisation rapide et efficace. Il a pris le temps d'expliquer le problème et de tout nettoyer après son passage.",
+      "Plombier très professionnel et à l'écoute. Il est venu le jour même réparer ma fuite en urgence alors que je n'avais plus d'eau",
     rating: 5,
   },
   {
     id: 5,
-    name: "Karim H.",
-    date: "Il y a 3 mois",
+    name: "Amina R.",
     comment:
-      "Plombier de confiance à Mantes-la-Jolie. Devis clair et respecté à l'euro près. Très bon suivi de chantier.",
+      "Très professionnel et hyper réactif intervention en urgence ! Très satisfaite je recommande fortement. Pratique des prix raisonnables.",
+    rating: 5,
+  },
+  {
+    id: 6,
+    name: "Fabienne S.",
+    comment:
+      "« Sofian est un grand professionnel passionné. Il a géré le remplacement du ballon d'eau chaude de ma locataire de A à Z avec un travail très soigné. ",
     rating: 5,
   },
 ];
@@ -215,17 +217,23 @@ function ReviewsSection() {
         {/* Titre de la section */}
         <AnimatedContent distance={40} direction="vertical" duration={0.6}>
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <div className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3.5 py-1.5 text-xs font-semibold text-blue-700 mb-4">
+            <div className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3.5 py-1.5 text-xs font-semibold text-blue-700 mb-4 ">
               <Star className="h-3.5 w-3.5 fill-blue-600 text-blue-600" />
               Avis vérifiés
             </div>
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl font-['Manrope',sans-serif]">
               Ce que disent nos clients
             </h2>
+            <div className="overflow-hidden rounded-2xl"></div>
             <p className="mt-3 text-slate-600">
               Découvrez les retours de nos clients à Mantes-la-Jolie et ses
               alentours.
             </p>
+            <img
+              src="avis.png"
+              alt="avis clients"
+              className="w-full h-auto rounded-2xl shadow-xl border border-slate-100 transition-transform duration-300 ease-in-out hover:scale-110 mt-[5%]"
+            />
           </div>
         </AnimatedContent>
 
@@ -254,7 +262,7 @@ function ReviewsSection() {
                 <span className="font-semibold text-sm text-slate-900">
                   {rev.name}
                 </span>
-                <span className="text-xs text-slate-400">{rev.date}</span>
+                {/* <span className="text-xs text-slate-400">{rev.date}</span> */}
               </div>
             </div>
           ))}
@@ -396,7 +404,7 @@ export default function App() {
         >
           <a
             href={PHONE_TEL}
-            className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(37,99,235,0.35)] transition-transform hover:scale-105 hover:bg-blue-700"
+            className="w-fit inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(37,99,235,0.35)] transition-transform hover:scale-105 hover:bg-blue-700"
           >
             <Phone className="h-4 w-4" strokeWidth={2.5} />
             Appeler le {PHONE_DISPLAY}
