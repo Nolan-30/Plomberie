@@ -17,6 +17,8 @@ import {
 import GradientWaves from "./GradientWaves";
 import ScrollExpand from "./ScrollExpand";
 import AnimatedContent from "./AnimatedContent";
+import MessageCircle from "./MessageCircle";
+import CheckIcon from "./CheckIcon";
 
 /* ------------------------------------------------------------------ */
 /*  Données                                                           */
@@ -31,42 +33,42 @@ const REVIEWS = [
     name: "Yassine B.",
     comment:
       "Très professionnel et ponctuel. Explications claires avant les travaux et tarifs très raisonnables. Je recommande MBS Plomberie a 100%.",
-    rating: 5,
+    service: "Dépannage général",
   },
   {
     id: 2,
     name: "Julliot P.",
     comment:
       "Excellent travail de MBS Plomberie. Ponctuel, explications claires avant intervention et tarifs très abordables.",
-    rating: 5,
+    service: "Intervention plomberie",
   },
   {
     id: 3,
     name: "Milah D.",
     comment:
       "Plombier extrêmement professionnel et sérieux. Il a refait toute notre salle de bain et retiré des WC avec un délai rapide et des prix très corrects.",
-    rating: 5,
+    service: "Rénovation salle de bain",
   },
   {
     id: 4,
     name: "Yasmina O.",
     comment:
       "Plombier très professionnel et à l'écoute. Il est venu le jour même réparer ma fuite en urgence alors que je n'avais plus d'eau",
-    rating: 5,
+    service: "Réparation de fuite",
   },
   {
     id: 5,
     name: "Amina R.",
     comment:
       "Très professionnel et hyper réactif intervention en urgence ! Très satisfaite je recommande fortement. Pratique des prix raisonnables.",
-    rating: 5,
+    service: "Intervention d'urgence",
   },
   {
     id: 6,
     name: "Fabienne S.",
     comment:
-      "« Sofian est un grand professionnel passionné. Il a géré le remplacement du ballon d'eau chaude de ma locataire de A à Z avec un travail très soigné. ",
-    rating: 5,
+      "Sofian est un grand professionnel passionné. Il a géré le remplacement du ballon d'eau chaude de ma locataire de A à Z avec un travail très soigné.",
+    service: "Remplacement ballon d'eau chaude",
   },
 ];
 
@@ -217,9 +219,9 @@ function ReviewsSection() {
         {/* Titre de la section */}
         <AnimatedContent distance={40} direction="vertical" duration={0.6}>
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <div className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3.5 py-1.5 text-xs font-semibold text-blue-700 mb-4 ">
-              <Star className="h-3.5 w-3.5 fill-blue-600 text-blue-600" />
-              Avis vérifiés
+            <div className="flex items-center justify-center gap-1.5 text-xs text-blue-600 font-medium mb-4 ">
+              <CheckIcon size={30} className="text-blue-600" />
+              <span className="text-2xl">Avis vérifié</span>
             </div>
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl font-['Manrope',sans-serif]">
               Ce que disent nos clients
@@ -246,12 +248,10 @@ function ReviewsSection() {
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-1 text-amber-400">
-                    {Array.from({ length: rev.rating }).map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-amber-400" />
-                    ))}
-                  </div>
-                  <Quote className="h-6 w-6 text-blue-200" />
+                  <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 border border-blue-100/80">
+                    {rev.service}
+                  </span>
+                  <MessageCircle size={22} className="text-blue-500" />
                 </div>
                 <p className="text-sm leading-relaxed text-slate-700 italic">
                   "{rev.comment}"
@@ -262,7 +262,6 @@ function ReviewsSection() {
                 <span className="font-semibold text-sm text-slate-900">
                   {rev.name}
                 </span>
-                {/* <span className="text-xs text-slate-400">{rev.date}</span> */}
               </div>
             </div>
           ))}
@@ -402,13 +401,13 @@ export default function App() {
           subtitle="MBS Plomberie — Mantes-la-Jolie"
           src="plomberie.png"
         >
-          <a
+          {/* <a
             href={PHONE_TEL}
             className="w-fit inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(37,99,235,0.35)] transition-transform hover:scale-105 hover:bg-blue-700"
           >
             <Phone className="h-4 w-4" strokeWidth={2.5} />
             Appeler le {PHONE_DISPLAY}
-          </a>
+          </a> */}
         </ScrollExpand>
 
         <ReviewsSection />
