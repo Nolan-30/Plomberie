@@ -343,9 +343,9 @@ export default function App() {
 
         <ScrollExpand
           useWindowScroll={true}
-          startWidth={28}
-          startHeight={40}
-          mediaZoom={1.1}
+          startWidth={40}
+          startHeight={50}
+          mediaZoom={1.0}
           title="Interventions rapides & Rénovations de qualité"
           subtitle="MBS Plomberie — Mantes-la-Jolie"
           src="plomberie.png"
