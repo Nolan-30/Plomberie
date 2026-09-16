@@ -9,68 +9,19 @@ import {
   ChevronRight,
   Menu,
   X,
-  Quote,
-  Mail,
 } from "lucide-react";
 
-// Composant
-import GradientWaves from "./GradientWaves";
-import ScrollExpand from "./ScrollExpand";
-import AnimatedContent from "./AnimatedContent";
-import MessageCircle from "./MessageCircle";
-import CheckIcon from "./CheckIcon";
+import REVIEWS from "./reviews.json"; // avis
 
-/* ------------------------------------------------------------------ */
-/*  Données                                                           */
-/* ------------------------------------------------------------------ */
+// Composant
+import GradientWaves from "./components/GradientWaves";
+import ScrollExpand from "./components/ScrollExpand";
+import AnimatedContent from "./components/AnimatedContent";
+import MessageCircle from "./components/MessageCircle";
+import CheckIcon from "./components/CheckIcon";
 
 const PHONE_DISPLAY = "06 20 35 18 26";
 const PHONE_TEL = "tel:0620351826";
-
-const REVIEWS = [
-  {
-    id: 1,
-    name: "Yassine B.",
-    comment:
-      "Très professionnel et ponctuel. Explications claires avant les travaux et tarifs très raisonnables. Je recommande MBS Plomberie a 100%.",
-    service: "Dépannage général",
-  },
-  {
-    id: 2,
-    name: "Julliot P.",
-    comment:
-      "Excellent travail de MBS Plomberie. Ponctuel, explications claires avant intervention et tarifs très abordables.",
-    service: "Intervention plomberie",
-  },
-  {
-    id: 3,
-    name: "Milah D.",
-    comment:
-      "Plombier extrêmement professionnel et sérieux. Il a refait toute notre salle de bain et retiré des WC avec un délai rapide et des prix très corrects.",
-    service: "Rénovation salle de bain",
-  },
-  {
-    id: 4,
-    name: "Yasmina O.",
-    comment:
-      "Plombier très professionnel et à l'écoute. Il est venu le jour même réparer ma fuite en urgence alors que je n'avais plus d'eau",
-    service: "Réparation de fuite",
-  },
-  {
-    id: 5,
-    name: "Amina R.",
-    comment:
-      "Très professionnel et hyper réactif intervention en urgence ! Très satisfaite je recommande fortement. Pratique des prix raisonnables.",
-    service: "Intervention d'urgence",
-  },
-  {
-    id: 6,
-    name: "Fabienne S.",
-    comment:
-      "Sofian est un grand professionnel passionné. Il a géré le remplacement du ballon d'eau chaude de ma locataire de A à Z avec un travail très soigné.",
-    service: "Remplacement ballon d'eau chaude",
-  },
-];
 
 /* ------------------------------------------------------------------ */
 /*  Navbar                                                             */
@@ -94,12 +45,13 @@ function Navbar() {
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center gap-2.5">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 shadow-[0_4px_12px_rgba(37,99,235,0.25)]">
-            <Droplet className="h-5 w-5 text-white" strokeWidth={2.5} />
+            {/*  icon d'eau */}
+            <Droplet className="h-55 w-55 " strokeWidth={2.5} />
           </span>
-          <span className="font-['Manrope',sans-serif] text-lg font-bold tracking-tight text-white-900">
+          <span className="font-['Manrope',sans-serif] text-lg font-bold tracking-tight text-blue-500">
             MBS Plomberie
           </span>
         </a>
@@ -147,7 +99,7 @@ function Hero() {
       id="top"
       className="relative flex items-center overflow-hidden bg-[#0a1128] pb-16 pt-32 sm:pb-24 sm:pt-40"
     >
-      {/* Background Gradient Waves */}
+      {/* BG Gradient Waves */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <GradientWaves
           horizonColor="#0051ff"
@@ -209,14 +161,13 @@ function Hero() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Section Avis Clients                                               */
+/*  Avis Clients                                               */
 /* ------------------------------------------------------------------ */
 
 function ReviewsSection() {
   return (
     <section id="reviews" className="bg-white py-20 border-t border-slate-100">
       <div className="mx-auto max-w-7xl px-6">
-        {/* Titre de la section */}
         <AnimatedContent distance={40} direction="vertical" duration={0.6}>
           <div className="text-center max-w-2xl mx-auto mb-14">
             <div className="flex items-center justify-center gap-1.5 text-xs text-blue-600 font-medium mb-4 ">
@@ -239,7 +190,6 @@ function ReviewsSection() {
           </div>
         </AnimatedContent>
 
-        {/* Grille forcée en 3 colonnes côte à côte */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {REVIEWS.map((rev) => (
             <div
@@ -278,19 +228,18 @@ function ReviewsSection() {
 function Footer() {
   return (
     <footer className="w-full bg-[#0b1329] text-slate-300 pt-16 pb-12">
-      <div className="mx-auto max-w-7xl px-8">
-        <div className="grid grid-cols-4 gap-8 pb-16">
-          {/* Logo & Description */}
+      <div className="mx-auto max-w-7xl px-6 sm:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-600">
                 <Droplet className="h-5 w-5 text-white" strokeWidth={2.5} />
               </span>
               <span className="font-['Manrope',sans-serif] text-xl font-bold tracking-tight text-white">
                 MBS Plomberie
               </span>
             </div>
-            <p className="text-xs leading-relaxed text-slate-400">
+            <p className="text-sm leading-relaxed text-slate-400">
               Votre artisan plombier-chauffagiste de confiance à
               Mantes-la-Jolie. Intervention rapide, travail soigné et tarifs
               transparents.
@@ -302,7 +251,7 @@ function Footer() {
             <h3 className="mb-4 font-['Manrope',sans-serif] text-base font-semibold text-white">
               Services & Navigation
             </h3>
-            <ul className="space-y-3 text-xs text-slate-400">
+            <ul className="space-y-3 text-sm text-slate-400">
               <li>
                 <a href="#top" className="transition-colors hover:text-white">
                   Accueil
@@ -334,7 +283,7 @@ function Footer() {
             <h3 className="mb-4 font-['Manrope',sans-serif] text-base font-semibold text-white">
               Contact
             </h3>
-            <ul className="space-y-4 text-xs text-slate-400">
+            <ul className="space-y-4 text-sm text-slate-400">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-blue-500" />
                 <span>6 Sq. Chantecoq, 78200 Mantes-la-Jolie</span>
@@ -343,7 +292,7 @@ function Footer() {
                 <Phone className="h-4 w-4 shrink-0 text-blue-500" />
                 <a
                   href={PHONE_TEL}
-                  className="transition-colors hover:text-white"
+                  className="font-medium text-slate-200 transition-colors hover:text-white"
                 >
                   {PHONE_DISPLAY}
                 </a>
@@ -356,7 +305,7 @@ function Footer() {
             <h3 className="mb-4 font-['Manrope',sans-serif] text-base font-semibold text-white">
               Disponibilité
             </h3>
-            <div className="flex items-center gap-2.5 text-xs font-medium text-emerald-400">
+            <div className="flex items-center gap-2.5 text-sm font-medium text-emerald-400">
               <Clock className="h-4 w-4 shrink-0" />
               <span>Urgence : 24h/24 et 7j/7</span>
             </div>
@@ -364,7 +313,7 @@ function Footer() {
         </div>
 
         <div className="border-t border-slate-800/80 pt-8">
-          <div className="flex items-center justify-center gap-4 text-xs text-slate-500">
+          <div className="flex items-center justify-center text-center text-xs text-slate-500">
             <p>© MBS Plomberie. Tous droits réservés.</p>
           </div>
         </div>
@@ -400,15 +349,7 @@ export default function App() {
           title="Interventions rapides & Rénovations de qualité"
           subtitle="MBS Plomberie — Mantes-la-Jolie"
           src="plomberie.png"
-        >
-          {/* <a
-            href={PHONE_TEL}
-            className="w-fit inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(37,99,235,0.35)] transition-transform hover:scale-105 hover:bg-blue-700"
-          >
-            <Phone className="h-4 w-4" strokeWidth={2.5} />
-            Appeler le {PHONE_DISPLAY}
-          </a> */}
-        </ScrollExpand>
+        ></ScrollExpand>
 
         <ReviewsSection />
       </main>
