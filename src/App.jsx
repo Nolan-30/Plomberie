@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
-  Droplet,
+  Flame,
   Phone,
   Star,
   MapPin,
@@ -20,7 +20,8 @@ import AnimatedContent from "./components/AnimatedContent";
 import MessageCircle from "./components/MessageCircle";
 import CheckIcon from "./components/CheckIcon";
 
-const PHONE_DISPLAY = "06 20 35 18 26";
+const PHONE_DISPLAY = "07 51 57 32 81";
+
 const PHONE_TEL = "tel:0620351826";
 
 /* ------------------------------------------------------------------ */
@@ -48,11 +49,12 @@ function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center gap-2.5">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 shadow-[0_4px_12px_rgba(37,99,235,0.25)]">
-            {/*  icon d'eau */}
-            <Droplet className="h-55 w-55 " strokeWidth={2.5} />
+            {/*  icon d'eau
+             */}
+            <Flame className="h-55 w-55" strokeWidth={2.5} />
           </span>
           <span className="font-['Manrope',sans-serif] text-lg font-bold tracking-tight text-blue-500">
-            MBS Plomberie
+            JB Plomberie
           </span>
         </a>
 
@@ -113,7 +115,7 @@ function Hero() {
           className="mt-7 animate-[fadeInUp_0.7s_ease-out_forwards] font-['Manrope',sans-serif] text-4xl font-extrabold leading-[1.1] tracking-tight text-white opacity-0 sm:text-5xl lg:text-6xl"
           style={{ animationDelay: "120ms" }}
         >
-          Votre plombier-chauffagiste de confiance à Mantes-la-Jolie
+          Votre plombier-chauffagiste de confiance à Mantes-la-Ville
         </h1>
 
         <p
@@ -121,7 +123,7 @@ function Hero() {
           style={{ animationDelay: "240ms" }}
         >
           Intervention rapide 24h/24 et 7j/7 pour vos dépannages, recherches de
-          fuites et rénovations de salle de bain, partout à Mantes-la-Jolie et
+          fuites et rénovations de salle de bain, partout à Mantes-la-Ville et
           ses environs.
         </p>
 
@@ -151,8 +153,8 @@ function Hero() {
             Dispo 24/7
           </span>
           <span className="flex items-center gap-2">
-            <MapPin className="h-4 w-4 text-blue-400" />6 Sq. Chantecoq, 78200
-            Mantes-la-Jolie
+            <MapPin className="h-4 w-4 text-blue-400" /> 12 Rue de l'orbiquet
+            78711 Mantes-la-Ville{" "}
           </span>
         </div>
       </div>
@@ -179,7 +181,7 @@ function ReviewsSection() {
             </h2>
             <div className="overflow-hidden rounded-2xl"></div>
             <p className="mt-3 text-slate-600">
-              Découvrez les retours de nos clients à Mantes-la-Jolie et ses
+              Découvrez les retours de nos clients à Mantes-la-Ville et ses
               alentours.
             </p>
             <img
@@ -233,10 +235,10 @@ function Footer() {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-600">
-                <Droplet className="h-5 w-5 text-white" strokeWidth={2.5} />
+                <Flame className="h-55 w-55" strokeWidth={2.5} />
               </span>
               <span className="font-['Manrope',sans-serif] text-xl font-bold tracking-tight text-white">
-                MBS Plomberie
+                JB Plomberie
               </span>
             </div>
             <p className="text-sm leading-relaxed text-slate-400">
@@ -286,7 +288,7 @@ function Footer() {
             <ul className="space-y-4 text-sm text-slate-400">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-blue-500" />
-                <span>6 Sq. Chantecoq, 78200 Mantes-la-Jolie</span>
+                <span> 12 Rue de l'orbiquet 78711 Mantes-la-Ville</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-blue-500" />
@@ -314,7 +316,7 @@ function Footer() {
 
         <div className="border-t border-slate-800/80 pt-8">
           <div className="flex items-center justify-center text-center text-xs text-slate-500">
-            <p>© MBS Plomberie. Tous droits réservés.</p>
+            <p>© JB Plomberie. Tous droits réservés.</p>
           </div>
         </div>
       </div>
@@ -347,7 +349,7 @@ export default function App() {
           startHeight={50}
           mediaZoom={1.0}
           title="Interventions rapides & Rénovations de qualité"
-          subtitle="MBS Plomberie — Mantes-la-Jolie"
+          subtitle="JB Plomberie — Mantes-la-Ville"
           src="plomberie.png"
         ></ScrollExpand>
 

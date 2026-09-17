@@ -1,38 +1,20 @@
 [
   {
     "id": 1,
-    "name": "Yassine B.",
-    "comment": "Très professionnel et ponctuel. Explications claires avant les travaux et tarifs très raisonnables. Je recommande MBS Plomberie a 100%.",
-    "service": "Dépannage général"
+    "name": "Charles ",
+    "comment": "Belizare a fait un super boulot ! Un vrai professionnel, très sympa, qui a révisé et dépanné ma vieille chaudière De Dietrich au fioul dans les règles de l'art. Mention spéciale pour sa réactivité : appelé le soir, il est intervenu dès 9h le lendemain et a sauvé mon week-end !",
+    "service": "Dépannage chaudière fioul"
   },
   {
     "id": 2,
-    "name": "Julliot P.",
-    "comment": "Excellent travail de MBS Plomberie. Ponctuel, explications claires avant intervention et tarifs très abordables.",
-    "service": "Intervention plomberie"
+    "name": "Mustafa",
+    "comment": "Intervention réalisée aujourd'hui avec un très grand professionnalisme ! Le technicien a été particulièrement à l'écoute et a effectué son travail tout en nous apportant d'excellents conseils. Je recommande vivement ses services.",
+    "service": "Entretien & Conseils"
   },
   {
     "id": 3,
-    "name": "Milah D.",
-    "comment": "Plombier extrêmement professionnel et sérieux. Il a refait toute notre salle de bain et retiré des WC avec un délai rapide et des prix très corrects.",
-    "service": "Rénovation salle de bain"
-  },
-  {
-    "id": 4,
-    "name": "Yasmina O.",
-    "comment": "Plombier très professionnel et à l'écoute. Il est venu le jour même réparer ma fuite en urgence alors que je n'avais plus d'eau",
-    "service": "Réparation de fuite"
-  },
-  {
-    "id": 5,
-    "name": "Amina R.",
-    "comment": "Très professionnel et hyper réactif intervention en urgence ! Très satisfaite je recommande fortement. Pratique des prix raisonnables.",
-    "service": "Intervention d'urgence"
-  },
-  {
-    "id": 6,
-    "name": "Fabienne S.",
-    "comment": "Sofian est un grand professionnel passionné. Il a géré le remplacement du ballon d'eau chaude de ma locataire de A à Z avec un travail très soigné.",
-    "service": "Remplacement ballon d'eau chaude"
+    "name": "Alison",
+    "comment": "Face à une grosse panne sur ma chaudière, JB Plombier a été le seul à résoudre le problème dans un délai très court. Très professionnel et réactif, je le recommande fortement. Merci encore pour l'intervention !",
+    "service": "Réparation de panne chaudière"
   }
 ]
