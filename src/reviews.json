@@ -1,20 +1,20 @@
 [
   {
     "id": 1,
-    "name": "Charles ",
-    "comment": "Belizare a fait un super boulot ! Un vrai professionnel, très sympa, qui a révisé et dépanné ma vieille chaudière De Dietrich au fioul dans les règles de l'art. Mention spéciale pour sa réactivité : appelé le soir, il est intervenu dès 9h le lendemain et a sauvé mon week-end !",
-    "service": "Dépannage chaudière fioul"
+    "name": "Thomas L.",
+    "comment": "Un vrai professionnel, très réactif et sérieux ! Il a révisé et dépanné ma chaudière dans les règles de l'art. Appelé le soir, il est intervenu dès le lendemain matin. Je recommande vivement !",
+    "service": "Dépannage chaudière"
   },
   {
     "id": 2,
-    "name": "Mustafa",
-    "comment": "Intervention réalisée aujourd'hui avec un très grand professionnalisme ! Le technicien a été particulièrement à l'écoute et a effectué son travail tout en nous apportant d'excellents conseils. Je recommande vivement ses services.",
+    "name": "Sophie M.",
+    "comment": "Intervention réalisée avec un très grand professionnalisme ! Le technicien a été particulièrement à l'écoute et a effectué son travail tout en nous apportant d'excellents conseils. Je recommande vivement ses services.",
     "service": "Entretien & Conseils"
   },
   {
     "id": 3,
-    "name": "Alison",
-    "comment": "Face à une grosse panne sur ma chaudière, JB Plombier a été le seul à résoudre le problème dans un délai très court. Très professionnel et réactif, je le recommande fortement. Merci encore pour l'intervention !",
-    "service": "Réparation de panne chaudière"
+    "name": "Marc D.",
+    "comment": "Face à une grosse panne, votre artisan a été le seul à résoudre le problème dans un délai très court. Très professionnel et réactif, je le recommande fortement. Merci encore pour l'intervention !",
+    "service": "Réparation de panne"
   }
 ]

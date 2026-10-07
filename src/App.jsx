@@ -19,13 +19,42 @@ import ScrollExpand from "./components/ScrollExpand";
 import AnimatedContent from "./components/AnimatedContent";
 import MessageCircle from "./components/MessageCircle";
 import CheckIcon from "./components/CheckIcon";
+import DriftWall from "./components/DriftWall";
 
-const PHONE_DISPLAY = "07 51 57 32 81";
+const PHONE_DISPLAY = "06 00 00 00 00";
 
-const PHONE_TEL = "tel:0620351826";
+const PHONE_TEL = "tel:0600000000";
+
+// Images
+const items = [
+  { image: "https://picsum.photos/id/1035/600/400" },
+  { image: "https://picsum.photos/id/1039/600/400" },
+  { image: "https://picsum.photos/id/1036/600/400" },
+
+  // { image: "avis1.png" },
+  // { image: "avis2.png" },
+  // { image: "avis3.png" },
+
+  // { image: "travaux1.png" },
+  // { image: "travaux2.png" },
+  // { image: "travaux3.png" },
+  // { image: "travaux4.png" },
+
+  // { image: "avis1.png" },
+  // { image: "avis2.png" },
+  // { image: "avis3.png" },
+
+  // { image: "https://picsum.photos/id/1037/600/400" },
+  // { image: "https://picsum.photos/id/1038/600/400" },
+  // { image: "https://picsum.photos/id/1040/600/400" },
+
+  // { image: "https://picsum.photos/id/1051/600/400" },
+  // { image: "https://picsum.photos/id/1048/600/400" },
+  // { image: "https://picsum.photos/id/1044/600/400" },
+];
 
 /* ------------------------------------------------------------------ */
-/*  Navbar                                                             */
+/*                    Navbar                                          */
 /* ------------------------------------------------------------------ */
 
 function Navbar() {
@@ -54,7 +83,7 @@ function Navbar() {
             <Flame className="h-55 w-55" strokeWidth={2.5} />
           </span>
           <span className="font-['Manrope',sans-serif] text-lg font-bold tracking-tight text-blue-500">
-            JB Plomberie
+            Artisan Plomberie
           </span>
         </a>
 
@@ -115,7 +144,7 @@ function Hero() {
           className="mt-7 animate-[fadeInUp_0.7s_ease-out_forwards] font-['Manrope',sans-serif] text-4xl font-extrabold leading-[1.1] tracking-tight text-white opacity-0 sm:text-5xl lg:text-6xl"
           style={{ animationDelay: "120ms" }}
         >
-          Votre plombier-chauffagiste de confiance à Mantes-la-Ville
+          Votre plombier-chauffagiste de confiance dans votre ville
         </h1>
 
         <p
@@ -123,7 +152,7 @@ function Hero() {
           style={{ animationDelay: "240ms" }}
         >
           Intervention rapide 24h/24 et 7j/7 pour vos dépannages, recherches de
-          fuites et rénovations de salle de bain, partout à Mantes-la-Ville et
+          fuites et rénovations de salle de bain, partout dans votre ville et
           ses environs.
         </p>
 
@@ -153,8 +182,8 @@ function Hero() {
             Dispo 24/7
           </span>
           <span className="flex items-center gap-2">
-            <MapPin className="h-4 w-4 text-blue-400" /> 12 Rue de l'orbiquet
-            78711 Mantes-la-Ville{" "}
+            <MapPin className="h-4 w-4 text-blue-400" /> 123 Rue de la Plomberie,
+            00000 Votre Ville{" "}
           </span>
         </div>
       </div>
@@ -181,7 +210,7 @@ function ReviewsSection() {
             </h2>
             <div className="overflow-hidden rounded-2xl"></div>
             <p className="mt-3 text-slate-600">
-              Découvrez les retours de nos clients à Mantes-la-Ville et ses
+              Découvrez les retours de nos clients dans votre ville et ses
               alentours.
             </p>
             <img
@@ -192,7 +221,33 @@ function ReviewsSection() {
           </div>
         </AnimatedContent>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div style={{ height: 500 }}>
+          <DriftWall
+            items={items}
+            columns={5}
+            tileWidth={200}
+            tileHeight={132}
+            gap={18}
+            tilt={16}
+            turn={-14}
+            perspective={1200}
+            depth={120}
+            speed={42}
+            direction="up"
+            variance={0.45}
+            parallax={0.6}
+            lift={64}
+            fade={0.6}
+            dim={0.55}
+            overlayColor="#000000"
+            radius={14}
+            roll={0}
+            pauseOnHover={false}
+            grayscale={false}
+          />
+        </div>
+
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {REVIEWS.map((rev) => (
             <div
               key={rev.id}
@@ -217,7 +272,7 @@ function ReviewsSection() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
@@ -238,12 +293,12 @@ function Footer() {
                 <Flame className="h-55 w-55" strokeWidth={2.5} />
               </span>
               <span className="font-['Manrope',sans-serif] text-xl font-bold tracking-tight text-white">
-                JB Plomberie
+                Artisan Plomberie
               </span>
             </div>
             <p className="text-sm leading-relaxed text-slate-400">
-              Votre artisan plombier-chauffagiste de confiance à
-              Mantes-la-Jolie. Intervention rapide, travail soigné et tarifs
+              Votre artisan plombier-chauffagiste de confiance dans votre ville
+              et ses environs. Intervention rapide, travail soigné et tarifs
               transparents.
             </p>
           </div>
@@ -288,7 +343,7 @@ function Footer() {
             <ul className="space-y-4 text-sm text-slate-400">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-blue-500" />
-                <span> 12 Rue de l'orbiquet 78711 Mantes-la-Ville</span>
+                <span>123 Rue de la Plomberie, 00000 Votre Ville</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-blue-500" />
@@ -316,7 +371,7 @@ function Footer() {
 
         <div className="border-t border-slate-800/80 pt-8">
           <div className="flex items-center justify-center text-center text-xs text-slate-500">
-            <p>© JB Plomberie. Tous droits réservés.</p>
+            <p>© Artisan Plomberie. Tous droits réservés.</p>
           </div>
         </div>
       </div>
@@ -349,7 +404,7 @@ export default function App() {
           startHeight={50}
           mediaZoom={1.0}
           title="Interventions rapides & Rénovations de qualité"
-          subtitle="JB Plomberie — Mantes-la-Ville"
+          subtitle="Artisan Plomberie — Votre Ville & ses environs"
           src="plomberie.png"
         ></ScrollExpand>
 
