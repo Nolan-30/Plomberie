@@ -1,9 +1,9 @@
-# 🔧 JB Plomberie — Site Vitrine Artisanal
+# 🔧 Artisan Plomberie — Modèle de Site Vitrine
 
-Site web moderne et ultra-réactif conçu pour **JB Plomberie**, artisan plombier-chauffagiste basé à Mantes-la-Ville.
-L'objectif principal de ce projet est d'offrir une expérience utilisateur fluide et immersive, optimisée pour la conversion de devis et la mise en avant des avis clients .
+Site web moderne et ultra-réactif conçu comme **modèle de démonstration** pour artisans plombiers-chauffagistes.
+L'objectif principal de ce projet est d'offrir une expérience utilisateur fluide et immersive, optimisée pour la conversion de devis et la mise en avant des avis clients.
 
-🌐 **Démo en ligne :** [https://jb-plumbing-chaufagiste.vercel.app/](https://jb-plumbing-chaufagiste.vercel.app/)
+🌐 **Démo en ligne :** [https://demo-plomberie.vercel.app/](https://demo-plomberie.vercel.app/)
 
 ---
 
