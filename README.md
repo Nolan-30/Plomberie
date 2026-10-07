@@ -1,16 +1,30 @@
-# React + Vite
+# 🔧 JB Plomberie — Site Vitrine Artisanal
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Site web moderne et ultra-réactif conçu pour **JB Plomberie**, artisan plombier-chauffagiste basé à Mantes-la-Ville.
+L'objectif principal de ce projet est d'offrir une expérience utilisateur fluide et immersive, optimisée pour la conversion de devis et la mise en avant des avis clients .
 
-Currently, two official plugins are available:
+🌐 **Démo en ligne :** [https://jb-plumbing-chaufagiste.vercel.app/](https://jb-plumbing-chaufagiste.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🛠️ Tech Stack & Bibliothèques
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Ce projet repose sur un stack moderne axé sur la performance, le typage strict et des animations haute qualité :
 
-## Expanding the Oxlint configuration
+- ⚛️ **React**  — Structure applicative et rendu hybride.
+- 🎨 **Tailwind CSS** — Style utilitaire pour un design responsive, moderne et épuré.
+- 🔮 **React Bits** — Intégration de composants d'animations avancés et interactifs.
+- 🛡️ **Lucide React** — Set d'icônes vectorielles légères et personnalisables.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+---
+
+## ✨ Fonctionnalités Clés
+
+- 📱 **Navigation Responsive & Sticky Header** — Barre de navigation adaptative avec menu mobile et appel direct.
+- 🌊 **Hero Section Immersive** — Arrière-plan animé avec effet d'ondes via React Bits.
+- 📜 **Scroll-Driven Expansion** — Effet visuel au défilement agrandissant la présentation des réalisations.
+- ⭐ **Section Avis Clients Vérifiés** — Chargement dynamique et affichage sous forme de cartes d'avis réels.
+- 📞 **Appel à l'action immédiat** — Boutons dédiés pour la demande de devis gratuit et contact téléphonique rapide.
+
+---
+
