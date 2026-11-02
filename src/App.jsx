@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
 import {
   Flame,
   Phone,
@@ -161,7 +162,7 @@ function Hero() {
           style={{ animationDelay: "360ms" }}
         >
           <a
-            href={PHONE_TEL}
+            href="#devis"
             className="group flex w-full items-center justify-center gap-2 rounded-full border border-blue-500/30 bg-blue-600 px-7 py-4 text-base font-semibold text-white shadow-lg transition-all duration-300 ease-out hover:bg-blue-500 sm:w-auto"
           >
             Demander un devis gratuit
@@ -273,6 +274,180 @@ function ReviewsSection() {
             </div>
           ))}
         </div> */}
+      </div>
+    </section>
+  );
+}
+
+function QuoteRequestSection() {
+  const [isSending, setIsSending] = useState(false);
+  const [submissionStatus, setSubmissionStatus] = useState("");
+  const [submissionError, setSubmissionError] = useState(false);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setIsSending(true);
+    setSubmissionStatus("");
+    setSubmissionError(false);
+
+    try {
+      await emailjs.sendForm(
+        "service_pt0wilp",
+        "template_hlqgz28",
+        form,
+        "dJQ_EgGvhSFV0nufM",
+      );
+      form.reset();
+      setSubmissionStatus(
+        "Votre demande a bien été envoyée ! Nous vous recontactons rapidement.",
+      );
+    } catch (error) {
+      console.error("Échec de l'envoi de la demande de devis :", error);
+      setSubmissionError(true);
+      setSubmissionStatus(
+        "L'envoi de votre demande a échoué. Veuillez réessayer ou nous contacter par téléphone.",
+      );
+    } finally {
+      setIsSending(false);
+    }
+  };
+
+  return (
+    <section id="devis" className="border-t border-slate-100 bg-slate-50 py-20">
+      <div className="mx-auto max-w-3xl px-6">
+        <div className="mb-10 text-center">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-blue-600">
+            Demande de devis
+          </p>
+          <h2 className="font-['Manrope',sans-serif] text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            Parlons de votre projet
+          </h2>
+          <p className="mt-4 text-slate-600">
+            Décrivez votre besoin, nous vous recontacterons rapidement.
+          </p>
+        </div>
+
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
+        >
+          <div className="grid gap-6 sm:grid-cols-2">
+            <div>
+              <label
+                htmlFor="from_name"
+                className="mb-2 block text-sm font-medium text-slate-700"
+              >
+                Nom &amp; Prénom
+              </label>
+              <input
+                id="from_name"
+                name="from_name"
+                type="text"
+                autoComplete="name"
+                required
+                className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="phone"
+                className="mb-2 block text-sm font-medium text-slate-700"
+              >
+                Téléphone
+              </label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                autoComplete="tel"
+                required
+                className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label
+              htmlFor="address"
+              className="mb-2 block text-sm font-medium text-slate-700"
+            >
+              Adresse / Ville du chantier
+            </label>
+            <input
+              id="address"
+              name="address"
+              type="text"
+              autoComplete="street-address"
+              required
+              className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="service_type"
+              className="mb-2 block text-sm font-medium text-slate-700"
+            >
+              Type d’intervention
+            </label>
+            <select
+              id="service_type"
+              name="service_type"
+              required
+              defaultValue=""
+              className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            >
+              <option value="" disabled>
+                Sélectionnez une intervention
+              </option>
+              <option value="Dépannage urgent">Dépannage urgent</option>
+              <option value="Salle de bain">Salle de bain</option>
+              <option value="Chauffage / Chauffe-eau">
+                Chauffage / Chauffe-eau
+              </option>
+              <option value="Autre">Autre</option>
+            </select>
+          </div>
+
+          <div>
+            <label
+              htmlFor="message"
+              className="mb-2 block text-sm font-medium text-slate-700"
+            >
+              Description du besoin
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              className="w-full resize-y rounded-lg border border-slate-300 px-4 py-3 text-slate-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            />
+          </div>
+
+          <button
+            type="submit"
+            disabled={isSending}
+            className="flex w-full items-center justify-center rounded-full bg-blue-600 px-6 py-3.5 font-semibold text-white shadow-sm transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {isSending ? "Envoi en cours..." : "Envoyer ma demande"}
+          </button>
+
+          {submissionStatus && (
+            <p
+              role={submissionError ? "alert" : "status"}
+              aria-live="polite"
+              className={
+                submissionError
+                  ? "text-sm font-medium text-red-600"
+                  : "text-sm font-medium text-emerald-700"
+              }
+            >
+              {submissionStatus}
+            </p>
+          )}
+        </form>
       </div>
     </section>
   );
@@ -409,6 +584,7 @@ export default function App() {
         ></ScrollExpand>
 
         <ReviewsSection />
+        <QuoteRequestSection />
       </main>
 
       <Footer />
